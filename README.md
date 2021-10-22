@@ -7,6 +7,11 @@ Hoop Dreams gives users the chance to step on the court, get that amazing feelin
 Thats where the Hoop Dreamer comes in, they will go around the court and collect all the game balls before the clock runs out. While avoiding the food and  sweat puddles. Grabbing the dirty balls get you extra points (avoid the players from getting sick)
 
 
+![Project Image-1](https://user-images.githubusercontent.com/87461431/138512788-24672509-823e-44d0-a438-55c0a0baf6dc.jpeg)
+
+
+
+
 MVP
 
 Create Game usinig JavaScript, while using Bootstap to style file 
