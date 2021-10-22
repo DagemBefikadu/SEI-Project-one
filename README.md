@@ -6,10 +6,7 @@ Hoop Dreams gives users the chance to step on a basketball court and experience 
 
 Hoop Dreamers will go around the court and collect all the game balls before the clock runs out. While avoiding the food and sweat puddles. Grabbing the dirty balls get them extra points (helps protect players from getting sick). The court needs to be cleared before the players return to Start the Game! Are you up for the challenge…
 
-![Project Image-1](https://user-images.githubusercontent.com/87461431/138512788-24672509-823e-44d0-a438-55c0a0baf6dc.jpeg)
-
-
-
+Project Image 1.jpeg
 
 MVP
 
