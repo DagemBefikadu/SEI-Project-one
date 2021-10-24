@@ -1,0 +1,12 @@
+Hoop Dreamer game
+the point of this game is collect good objects while avoiding bad objects
+I will need 5 elements on the game board
+1) Player (traingle)
+2) Basketball (small cirlce)
+3) Dirty Basketball (normal circle)
+4) Sweat puddle (big square)
+5) Food
+Hoop Dreamer can walk around the court
+When the Hoop Dreamer touches a Basketball they recieve a point or two
+when the Hoop Dreamer touches food or swear they lose a point 
+

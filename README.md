@@ -10,6 +10,8 @@ Hoop Dreamers will go around the court and collect all the game balls before the
 
 MVP
 
+One player
+
 Create Game using JavaScript, while using Bootstrap to style the file.
 
 Display Instructions and Start Game Button
@@ -37,3 +39,11 @@ Create different levels of the game where less good points appear on the game bo
 Make the background screen of the game board the users favorite team logo.
 
 Create the "Swoosh" sound for when a ball is collected and a whistle sound for food or sweat puddles. 
+
+
+Canvas, canvas crawler on the screen 
+read for  reference
+all i need should 
+make the person a traingle 
+orange square for good objects
+little squares for each object 
