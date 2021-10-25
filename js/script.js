@@ -22,18 +22,46 @@ function hoopDreamer(x, y, color, width, height) {
     }
 }
 
-let player = new hoopDreamer(10, 10, 'orange', 20, 20)
+function spawnObjects(color, width, height) {
+    this.x = Math.floor(Math.random() * game.width)
+    this.y = Math.floor(Math.random() * game.height)    
+    this.color = color
+    this.width = width
+    this.height = height
+    this.type = 'good'
+    
+    this.render = function () {
+        ctx.fillStyle = this.color
+        ctx.fillRect(this.x, this.y, this.width, this.height)
+    }
+}
+
+let player = new hoopDreamer(10, 10, 'beige', 30, 30)
 console.log('plyer at' , player)
+//Lets get the random objects on the game board
+let basketball = new spawnObjects('orange', 15, 15)
+let bigBasketball = new spawnObjects('red', 20,20)
+let food = new spawnObjects('brown', 20,10)
+let sweat = new spawnObjects('blue', 10,20)
 
 const gameLoop = () => {
     ctx.clearRect(0, 0, game.width, game.height)
     player.render()
+    basketball.render()
+    bigBasketball.render()
+    food.render()
+    sweat.render()
 }
 
-let stop = () => {clearInterval(gameInterval)}
+// let objLocation = []
+// const createLocation = () => {
+//     for(i= 0; i < 5; i++) {
 
-let gameInterval = setInterval(gameLoop, 70)
+//     }
+// }
 
+
+//THis handles the players movement
 const movementHandler = (e) => {
     switch (e.keyCode) {
         // player UP
@@ -56,12 +84,6 @@ const movementHandler = (e) => {
 }
 
 document.addEventListener('keydown', movementHandler)
-
-
-
-
-
-
 
 
 //Button is currently shot clock for now, we want to change that function to happen once the player moves.
@@ -89,4 +111,6 @@ function start() {
     shotClock()
 }
 
+let stop = () => {clearInterval(gameInterval)}
 
+let gameInterval = setInterval(gameLoop, 70)

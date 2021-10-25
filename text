@@ -10,3 +10,28 @@ Hoop Dreamer can walk around the court
 When the Hoop Dreamer touches a Basketball they recieve a point or two
 when the Hoop Dreamer touches food or swear they lose a point 
 
+
+//I need to create an object 
+//That object will have an x, y, color, width, height 
+//I would 4 of each on the bad objects and 2 of each on the good objects
+// I would like this objects to appear randomly on the board when the game starts
+
+//I need to create an object 
+spawnObjects(x, y, color, width, height,type)
+    Math.floor(Math.random() * game.width) = x
+    Math.floor(Math.random() * game.height)= y
+    this.color = color
+    this.width = width
+    this.height = height
+    this.type = true
+//That object will have an x, y, color, width, height 
+//I would 4 of each on the bad objects and 2 of each on the good objects
+// let objLocation = []
+// const createLocation = () => {
+//     for(i= 0; i < 5; i++) {
+
+//     }
+// }
+// I would like this objects to appear randomly on the board when the game starts
+
+
