@@ -62,6 +62,10 @@ canvas {
     font-size: 24px;
   }
 
+  span {
+      font-size: 40px;
+  }
+
   main {
     grid-area: game;
   }
