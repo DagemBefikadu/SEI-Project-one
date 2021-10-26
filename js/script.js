@@ -39,26 +39,55 @@ function spawnObjects(color, width, height) {
 let player = new hoopDreamer(10, 10, 'beige', 30, 30)
 console.log('plyer at' , player)
 //Lets get the random objects on the game board
-let basketball = new spawnObjects('orange', 15, 15)
-let bigBasketball = new spawnObjects('red', 20,20)
-let food = new spawnObjects('brown', 20,10)
-let sweat = new spawnObjects('blue', 10,20)
+// let basketball = new spawnObjects('orange', 15, 15)
+
 
 const gameLoop = () => {
     ctx.clearRect(0, 0, game.width, game.height)
     player.render()
-    basketball.render()
-    bigBasketball.render()
-    food.render()
-    sweat.render()
+    courtObjects.forEach((objects) => {
+        objects.render()
+    })
+    // basketball.render()
+    // bigBasketball.render()
+    // food.render()
+    // sweat.render()
 }
 
-// let objLocation = []
-// const createLocation = () => {
-//     for(i= 0; i < 5; i++) {
+let courtObjects = []
+console.log(courtObjects)
 
+// const createMoreCourtObjects = () => {
+//     for(i= 0; i < 1; i++) {
+//         let basketball = new spawnObjects('orange', 15, 15)
+//         let bigBasketball = new spawnObjects('red', 20,20)
+//         let food = new spawnObjects('brown', 20,10)
+//         let sweat = new spawnObjects('blue', 10,20)
+//         courtObjects.push(basketball,bigBasketball, food, sweat)
+//         if (courtObjects.length <= 16) {
+            
+//         }
 //     }
 // }
+// console.log(courtObjects )  
+// createMoreCourtObjects()
+
+function courtObject() {
+        spawnInterval = setInterval(() => {
+            let basketball = new spawnObjects('orange', 15, 15)
+            let bigBasketball = new spawnObjects('red', 20,20)
+            let food = new spawnObjects('brown', 20,10)
+            let sweat = new spawnObjects('blue', 10,20)
+            courtObjects.push(basketball,bigBasketball, food, sweat)
+            if (courtObjects.length >= 20) {
+                clearInterval(spawnInterval)
+                console.log(courtObjects)
+            }
+            console.log(spawnInterval)
+            console.log(courtObjects)
+        }, 3000)
+    } 
+courtObject()
 
 
 //THis handles the players movement
