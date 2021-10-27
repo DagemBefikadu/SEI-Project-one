@@ -35,3 +35,60 @@ spawnObjects(x, y, color, width, height,type)
 // I would like this objects to appear randomly on the board when the game starts
 
 
+
+//   createMoreCourtObjects()
+//   courtObjects.forEach((object) => {
+//     object.render();
+//     if (
+//         player.x > object.x && player.y > object.y 
+
+//     ) {
+//         console.log(player.x)
+//         console.log(object.x)
+//         console.log(player.y)
+//         console.log(object.y)
+//         object.alive = false
+//         courtObjects.splice(object,1)
+//         // console.log(courtObjects)
+//         console.log(object.color)
+//         console.log(object.alive)
+//     }
+//   });
+
+
+const gameLoop = () => {
+  ctx.clearRect(0, 0, game.width, game.height);
+  player.render();
+  if (courtObjects.length < 16) {
+    createMoreCourtObjects()
+}
+  console.log(courtObjects)
+
+};
+let courtObjects = [];
+
+
+
+
+    if (courtObjects.length >= 2) {
+      clearInterval(spawnInterval);
+      console.log(courtObjects);
+    };
+    if (
+        player.x > basketball.x && player.y > basketball.y 
+
+    ) {
+        console.log(player.x)
+        console.log(object.x)
+        console.log(player.y)
+        console.log(object.y)
+        object.alive = false
+        // console.log(courtObjects)
+        console.log(object.color)
+        console.log(object.alive)
+    }
+  },500);
+    console.log(spawnInterval);
+    // console.log(courtObjects);
+}
+courtObject();
