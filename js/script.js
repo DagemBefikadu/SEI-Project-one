@@ -35,11 +35,11 @@ function spawnObjects(color, width, height) {
   };
 }
 
+//What we want our player to look like by using the constructor
 let player = new hoopDreamer(10, 10, "beige", 15, 15);
 console.log("plyer at", player);
-//Lets get the random objects on the game board
-// let basketball = new spawnObjects('orange', 15, 15)
 
+//This loop has to run to see objects on the game board
 const gameLoop = () => {
   ctx.clearRect(0, 0, game.width, game.height);
   player.render();
@@ -51,41 +51,13 @@ const gameLoop = () => {
         player.y + player.height > courtObjects[i].y ){
         courtObjects[i].alive = false
         courtObjects.splice(courtObjects[i],0)
-        //    console.log('gameLoop')
        }
    }
-//    createMoreCourtObjects()
-//   courtObjects.forEach((object, index) => {
-//     object.render();
-//     if (
-//         player.x > object.x && player.y > object.y 
-
-//     ) {
-//         console.log(player.x)
-//         console.log(object.x)
-//         console.log(player.y)
-//         console.log(object.y)
-//         object.alive = false
-//         courtObjects.splice(object,1)
-//         // console.log(courtObjects)
-//         console.log(object.color)
-//         console.log(object.alive)
-//     }
-//   });
 }
+//With this empty array I can push in all my objects, so I can use it later .(its global)
 let courtObjects = [];
 
-// const createMoreCourtObjects = () => {
-//     for(i= 0; i < 2; i++) {
-//         let basketball = new spawnObjects('orange', 15, 15)
-//         let bigBasketball = new spawnObjects('red', 20,20)
-//         let food = new spawnObjects('brown', 20,10)
-//         let sweat = new spawnObjects('blue', 10,20)
-//         courtObjects.push(basketball,bigBasketball, food, sweat)
-//     }
-// }
-
-
+//This function gives me the ability to limit how many objects appear at a time, while stopping to many from appearing. 
 function courtObject() {
   spawnInterval = setInterval(() => {
     let basketball = new spawnObjects("orange", 15, 15);
@@ -127,11 +99,6 @@ const movementHandler = (e) => {
 
 document.addEventListener("keydown", movementHandler);
 
-// const courtObjectCollected = () => {
-//     if (
-        
-//     )
-// }
 
 //Button is currently shot clock for now, we want to change that function to happen once the player moves.
 document.addEventListener("click", start);
