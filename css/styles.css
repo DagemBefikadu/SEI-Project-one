@@ -69,3 +69,8 @@ canvas {
   main {
     grid-area: game;
   }
+
+  collected {
+      color: beige;
+      font-size: 44px;
+  }
