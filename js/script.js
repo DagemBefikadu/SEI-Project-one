@@ -27,11 +27,11 @@ function spawnObjects(color, width, height) {
   this.width = width;
   this.height = height;
   this.alive = true;
-  if (this.color == "brown") {
+  if (this.color == "Aquamarine") {
     this.points = -1;
-  } else if (this.color == "blue") {
+  } else if (this.color == "DeepSkyBlue") {
     this.points = -1;
-  } else if (this.color == "red") {
+  } else if (this.color == "LawnGreen") {
     this.points = 2;
   } else {
     this.points = 1;
@@ -76,10 +76,10 @@ let courtObjects = [];
 //This function gives me the ability to limit how many objects appear at a time, while stopping to many from appearing.
 function courtObject() {
   spawnInterval = setInterval(() => {
-    let basketball = new spawnObjects("orange", 15, 15);
-    let bigBasketball = new spawnObjects("red", 15, 15);
-    let food = new spawnObjects("brown", 15, 15);
-    let sweat = new spawnObjects("blue", 15, 15);
+    let basketball = new spawnObjects("Magenta", 13, 13);
+    let bigBasketball = new spawnObjects("LawnGreen", 13, 13);
+    let food = new spawnObjects("Aquamarine", 13, 13);
+    let sweat = new spawnObjects("DeepSkyBlue", 13, 13);
     courtObjects.push(basketball, bigBasketball, food, sweat);
     if (courtObjects.length >= 44) {
       clearInterval(spawnInterval);
@@ -145,20 +145,15 @@ function shotClock() {
     shotDoneClock();
     stopGameLoop();
     winnerAlert();
+    location.reload();
   }
 }
 
 function winnerAlert() {
-  let myAlert = document.createElement("collected");
-  myAlert.setAttribute("role", "alert");
   if (pointCounter > 16) {
-    let myAlertText = document.createTextNode("YOU WIN!!!!!!");
-    myAlert.appendChild(myAlertText);
-    document.body.appendChild(myAlert);
+    alert("YOU WIN!!!!!!");
   } else {
-    let myAlertText = document.createTextNode("TRY AGAIN");
-    myAlert.appendChild(myAlertText);
-    document.body.appendChild(myAlert);
+    alert("TRY AGAIN");
   }
 }
 
