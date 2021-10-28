@@ -1,3 +1,13 @@
+/* #startMenu {
+    position: absolute ;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: lawngreen;
+    display: none;
+} */
+
+
 canvas {
     background-image: url('https://media.istockphoto.com/illustrations/basketball-court-with-wood-texture-basketball-tactical-court-illustration-id1212609648?k=20&m=1212609648&s=612x612&w=0&h=zu2wOuFSp3ITyzREz1q9kNWzhJq4PdvFTAj7E7gJrdM=');
     /* background-repeat: repeat; */

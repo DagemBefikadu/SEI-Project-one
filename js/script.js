@@ -7,6 +7,8 @@ let pointCounter = 0;
 game.setAttribute("width", getComputedStyle(game)["width"]);
 game.setAttribute("height", getComputedStyle(game)["height"]);
 
+
+
 function hoopDreamer(x, y, color, width, height) {
   this.x = x;
   this.y = y;
@@ -130,7 +132,7 @@ document.addEventListener("keydown", movementHandler);
 //Button is currently shot clock for now, we want to change that function to happen once the player moves.
 document.addEventListener("click", start);
 let time;
-let timeStart = 5;
+let timeStart = 9;
 
 const shotDoneClock = () => {
   clearInterval(time);
@@ -152,8 +154,10 @@ function shotClock() {
 function winnerAlert() {
   if (pointCounter > 16) {
     alert("YOU WIN!!!!!!");
+  } else if(pointCounter > 10)  {
+    alert("Awee soo close....");
   } else {
-    alert("TRY AGAIN");
+  alert("Try again!!!!")
   }
 }
 
