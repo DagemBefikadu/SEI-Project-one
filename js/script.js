@@ -1,7 +1,8 @@
 const game = document.getElementById("canvas");
-const points = document.getElementById("collected");
+let points = document.getElementById("counted");
 const clock = document.getElementById("timer");
 const ctx = canvas.getContext("2d");
+let pointCounter = 0;
 
 game.setAttribute("width", getComputedStyle(game)["width"]);
 game.setAttribute("height", getComputedStyle(game)["height"]);
@@ -26,6 +27,15 @@ function spawnObjects(color, width, height) {
   this.width = width;
   this.height = height;
   this.alive = true ;
+    if(this.color == 'brown') {
+        this.points = -1
+    }else if(this.color == 'blue') {
+        this.points = -1
+    } else if(this.color == 'red') {
+        this.points = 2
+    }else {
+        this.points = 1
+    }
 
   this.render = function () {
       if(this.alive === true) {
@@ -48,11 +58,15 @@ const gameLoop = () => {
        if(player.x < courtObjects[i].x + courtObjects[i].width && 
         player.x + player.width > courtObjects[i].x &&
         player.y < courtObjects[i].y + courtObjects[i].height &&
-        player.y + player.height > courtObjects[i].y ){
+        player.y + player.height > courtObjects[i].y && courtObjects[i].alive == true ){
+            console.log("hi")
         courtObjects[i].alive = false
         courtObjects.splice(courtObjects[i],0)
-       }
-   }
+        pointCounter+= courtObjects[i].points;
+        points.innerHTML = pointCounter
+        }
+ 
+    }
 }
 //With this empty array I can push in all my objects, so I can use it later .(its global)
 let courtObjects = [];
@@ -65,13 +79,13 @@ function courtObject() {
     let food = new spawnObjects("brown", 15, 15);
     let sweat = new spawnObjects("blue", 15, 15);
     courtObjects.push(basketball, bigBasketball, food, sweat);
-    if (courtObjects.length >= 12) {
+    if (courtObjects.length >= 44) {
       clearInterval(spawnInterval);
       console.log(courtObjects);
     }
     console.log(spawnInterval);
     // console.log(courtObjects);
-  }, 500);
+  }, 200);
 }
 courtObject();
 
