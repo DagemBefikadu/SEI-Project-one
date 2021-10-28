@@ -27,11 +27,11 @@ function spawnObjects(color, width, height) {
   this.width = width;
   this.height = height;
   this.alive = true;
-  if (this.color == "Aquamarine") {
+  if (this.color == "DarkCyan") {
     this.points = -1;
-  } else if (this.color == "DeepSkyBlue") {
+  } else if (this.color == "Navy") {
     this.points = -1;
-  } else if (this.color == "LawnGreen") {
+  } else if (this.color == "OrangeRed") {
     this.points = 2;
   } else {
     this.points = 1;
@@ -46,7 +46,7 @@ function spawnObjects(color, width, height) {
 }
 
 //What we want our player to look like by using the constructor
-let player = new hoopDreamer(10, 10, "beige", 15, 15);
+let player = new hoopDreamer(10, 10, "OliveDrab", 20, 20);
 console.log("plyer at", player);
 
 //This loop has to run to see objects on the game board
@@ -76,12 +76,12 @@ let courtObjects = [];
 //This function gives me the ability to limit how many objects appear at a time, while stopping to many from appearing.
 function courtObject() {
   spawnInterval = setInterval(() => {
-    let basketball = new spawnObjects("Magenta", 13, 13);
-    let bigBasketball = new spawnObjects("LawnGreen", 13, 13);
-    let food = new spawnObjects("Aquamarine", 13, 13);
-    let sweat = new spawnObjects("DeepSkyBlue", 13, 13);
+    let basketball = new spawnObjects("DarkRed", 13, 13);
+    let bigBasketball = new spawnObjects("OrangeRed", 13, 13);
+    let food = new spawnObjects("DarkCyan", 13, 13);
+    let sweat = new spawnObjects("Navy", 13, 13);
     courtObjects.push(basketball, bigBasketball, food, sweat);
-    if (courtObjects.length >= 44) {
+    if (courtObjects.length >= 52) {
       clearInterval(spawnInterval);
       console.log(courtObjects);
     }
