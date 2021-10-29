@@ -39,22 +39,3 @@ Create different levels of the game where less good points appear on the game bo
 Make the background screen of the game board the users favorite team logo.
 
 Create the "Swoosh" sound for when a ball is collected and a whistle sound for food or sweat puddles. 
-
-
-Canvas, canvas crawler on the screen 
-read for  reference
-all i need should 
-make the person a traingle 
-orange square for good objects
-little squares for each object 
-
-game start
-anaimation is runnin
-time hs started
-want to create items, in a array 
-start in a empty array
-set up your loop 4 make it run for times
-items are created but not showin g
-draw or render funtion 
-make something to produce an arrya and array to show those itesm
-array[].render

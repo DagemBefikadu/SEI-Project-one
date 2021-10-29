@@ -3,6 +3,7 @@ let points = document.getElementById("counted");
 const clock = document.getElementById("timer");
 const ctx = canvas.getContext("2d");
 let pointCounter = 0;
+let myMusic;
 
 
 
@@ -83,6 +84,7 @@ const gameLoop = () => {
       courtObjects.splice(courtObjects[i], 0);
       pointCounter += courtObjects[i].points;
       points.innerHTML = pointCounter;
+      
     }
   }
 };
@@ -177,6 +179,7 @@ function winnerAlert() {
 document.addEventListener("click", gameStartScreen);
 function gameStartScreen() {
     let x = document.getElementById("startMenu");
+    
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
