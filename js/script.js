@@ -10,6 +10,7 @@ let myMusic;
 game.setAttribute("width", getComputedStyle(game)["width"]);
 game.setAttribute("height", getComputedStyle(game)["height"]);
 
+//All my object images are stored here
 const basketballImg = new Image()
 const bigBasketballImg = new Image()
 const frenchFriesImg = new Image()
@@ -21,7 +22,8 @@ basketballImg.src = ('css/img/basketball.png');
 bigBasketballImg.src = ('css/img/bigBasketball.png');
 frenchFriesImg.src = ('css/img/frenchFries.png');
 sweatMarkImg.src = ('css/img/sweatMark.png');
-
+ 
+//Contains the Hoop Dreamer 
 function hoopDreamer(x, y, url, width, height) {
 this.url = url
   this.x = x;
@@ -35,6 +37,7 @@ this.url = url
   };
 }
 
+//Contains everything for the objects
 function spawnObjects(url, width, height) {
     this.url = url
   this.x = Math.floor(Math.random() * game.width);
@@ -167,6 +170,7 @@ function shotClock() {
   }
 }
 
+//Where the points are calculated
 function winnerAlert() {
   if (pointCounter > 16) {
     alert("YOU WIN!!!!!!");
@@ -186,7 +190,7 @@ function gameStartScreen() {
       x.style.display = "none";
     }
 }
-
+ //Start clock function 
 function start() {
   time = setInterval(shotClock, 2000);
 

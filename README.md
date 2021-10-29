@@ -39,3 +39,8 @@ Create different levels of the game where less good points appear on the game bo
 Make the background screen of the game board the users favorite team logo.
 
 Create the "Swoosh" sound for when a ball is collected and a whistle sound for food or sweat puddles. 
+
+
+Successful deployment:
+
+https://dagembefikadu.github.io/SEI-Project-one/
