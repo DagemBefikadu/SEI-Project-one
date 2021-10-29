@@ -7,33 +7,44 @@ let pointCounter = 0;
 game.setAttribute("width", getComputedStyle(game)["width"]);
 game.setAttribute("height", getComputedStyle(game)["height"]);
 
+const basketballImg = new Image()
+const bigBasketballImg = new Image()
+const frenchFriesImg = new Image()
+const sweatMarkImg = new Image()
+const basketballPlayer = new Image()
 
+basketballPlayer.src = ('css/img/BasketballPlayer.png');
+basketballImg.src = ('css/img/basketball.png');
+bigBasketballImg.src = ('css/img/bigBasketball.png');
+frenchFriesImg.src = ('css/img/frenchFries.png');
+sweatMarkImg.src = ('css/img/sweatMark.png');
 
-function hoopDreamer(x, y, color, width, height) {
+function hoopDreamer(x, y, url, width, height) {
+this.url = url
   this.x = x;
   this.y = y;
-  this.color = color;
   this.width = width;
   this.height = height;
 
   this.render = function () {
-    ctx.fillStyle = this.color;
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    // ctx.fillStyle = this.color;
+    ctx.drawImage(this.url, this.x, this.y, this.width, this.height)
   };
 }
 
-function spawnObjects(color, width, height) {
+function spawnObjects(url, width, height) {
+    this.url = url
   this.x = Math.floor(Math.random() * game.width);
   this.y = Math.floor(Math.random() * game.height);
-  this.color = color;
+//   this.color = color;
   this.width = width;
   this.height = height;
   this.alive = true;
-  if (this.color == "DarkCyan") {
+  if (this.url == frenchFriesImg) {
     this.points = -1;
-  } else if (this.color == "Navy") {
+  } else if (this.url == sweatMarkImg) {
     this.points = -1;
-  } else if (this.color == "OrangeRed") {
+  } else if (this.url == bigBasketballImg) {
     this.points = 2;
   } else {
     this.points = 1;
@@ -41,14 +52,15 @@ function spawnObjects(color, width, height) {
 
   this.render = function () {
     if (this.alive === true) {
-      ctx.fillStyle = this.color;
-      ctx.fillRect(this.x, this.y, this.width, this.height);
+    //   ctx.fillStyle = this.color;
+    //   ctx.fillRect(this.x, this.y, this.width, this.height);
+      ctx.drawImage(this.url, this.x, this.y, this.width, this.height)
     }
   };
 }
 
 //What we want our player to look like by using the constructor
-let player = new hoopDreamer(10, 10, "OliveDrab", 20, 20);
+let player = new hoopDreamer(10, 10, basketballPlayer,  60, 60);
 console.log("plyer at", player);
 
 //This loop has to run to see objects on the game board
@@ -78,12 +90,12 @@ let courtObjects = [];
 //This function gives me the ability to limit how many objects appear at a time, while stopping to many from appearing.
 function courtObject() {
   spawnInterval = setInterval(() => {
-    let basketball = new spawnObjects("DarkRed", 13, 13);
-    let bigBasketball = new spawnObjects("OrangeRed", 13, 13);
-    let food = new spawnObjects("DarkCyan", 13, 13);
-    let sweat = new spawnObjects("Navy", 13, 13);
+    let basketball = new spawnObjects(basketballImg, 30, 30);
+    let bigBasketball = new spawnObjects(bigBasketballImg, 30, 30);
+    let food = new spawnObjects(frenchFriesImg, 30, 30);
+    let sweat = new spawnObjects(sweatMarkImg, 30, 30);
     courtObjects.push(basketball, bigBasketball, food, sweat);
-    if (courtObjects.length >= 52) {
+    if (courtObjects.length >= 56) {
       clearInterval(spawnInterval);
       console.log(courtObjects);
     }
