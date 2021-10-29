@@ -4,6 +4,8 @@ const clock = document.getElementById("timer");
 const ctx = canvas.getContext("2d");
 let pointCounter = 0;
 
+
+
 game.setAttribute("width", getComputedStyle(game)["width"]);
 game.setAttribute("height", getComputedStyle(game)["height"]);
 
