@@ -3,8 +3,6 @@ let points = document.getElementById("counted");
 const clock = document.getElementById("timer");
 const ctx = canvas.getContext("2d");
 let pointCounter = 0;
-let myMusic;
-
 
 
 game.setAttribute("width", getComputedStyle(game)["width"]);
@@ -32,7 +30,6 @@ this.url = url
   this.height = height;
 
   this.render = function () {
-    // ctx.fillStyle = this.color;
     ctx.drawImage(this.url, this.x, this.y, this.width, this.height)
   };
 }
@@ -42,7 +39,6 @@ function spawnObjects(url, width, height) {
     this.url = url
   this.x = Math.floor(Math.random() * game.width);
   this.y = Math.floor(Math.random() * game.height);
-//   this.color = color;
   this.width = width;
   this.height = height;
   this.alive = true;
@@ -58,8 +54,6 @@ function spawnObjects(url, width, height) {
 
   this.render = function () {
     if (this.alive === true) {
-    //   ctx.fillStyle = this.color;
-    //   ctx.fillRect(this.x, this.y, this.width, this.height);
       ctx.drawImage(this.url, this.x, this.y, this.width, this.height)
     }
   };
@@ -107,7 +101,6 @@ function courtObject() {
       console.log(courtObjects);
     }
     console.log(spawnInterval);
-    // console.log(courtObjects);
   }, 100);
 }
 courtObject();
@@ -148,12 +141,13 @@ const movementHandler = (e) => {
 
 document.addEventListener("keydown", movementHandler);
 
-//Button is currently shot clock for now, we want to change that function to happen once the player moves.
+//Clock starts once the start game button is pressed
 document.addEventListener("click", start);
 let time;
 let timeStart = 24;
 
 const shotDoneClock = () => {
+  
   clearInterval(time);
 };
 
@@ -166,20 +160,34 @@ function shotClock() {
     shotDoneClock();
     stopGameLoop();
     winnerAlert();
-    location.reload();
   }
 }
 
-//Where the points are calculated
+//How the winner is annnoced
 function winnerAlert() {
+
   if (pointCounter > 16) {
-    alert("YOU WIN!!!!!!");
+    console.log('where areyuiou')
+    let x = "You WIN!!!"
+    document.getElementById("top-middle").innerText = x
+
   } else if(pointCounter > 10)  {
-    alert("Awee soo close....");
+    let x = "Almost,try again"
+    document.getElementById("top-middle").innerText = x
   } else {
-  alert("Try again!!!!")
+    let x =  "Play again"
+    document.getElementById("top-middle").innerText = x
+    console.log('where areyuiou')
   }
 }
+
+//How to reload the Game
+document.getElementById("top-middle").addEventListener("click", reloadThePage);
+function reloadThePage(){
+  window.location.reload();
+} 
+
+//Opening page of the game
 document.addEventListener("click", gameStartScreen);
 function gameStartScreen() {
     let x = document.getElementById("startMenu");
@@ -201,4 +209,5 @@ let stopGameLoop = () => {
   clearInterval(gameInterval);
 };
 
+//Speed at which the game is being refreshed
 let gameInterval = setInterval(gameLoop, 70);
