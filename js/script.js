@@ -166,12 +166,12 @@ function shotClock() {
 //How the winner is annnoced
 function winnerAlert() {
 
-  if (pointCounter > 16) {
+  if (pointCounter > 25) {
     console.log('where areyuiou')
     let x = "You WIN!!!"
     document.getElementById("top-middle").innerText = x
 
-  } else if(pointCounter > 10)  {
+  } else if(pointCounter > 16)  {
     let x = "Almost,try again"
     document.getElementById("top-middle").innerText = x
   } else {
