@@ -209,5 +209,5 @@ let stopGameLoop = () => {
   clearInterval(gameInterval);
 };
 
-//Speed at which the game is being refreshed//
+//Speed at which the game is being refreshed
 let gameInterval = setInterval(gameLoop, 70);
